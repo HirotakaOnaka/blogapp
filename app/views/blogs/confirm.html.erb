@@ -1,0 +1,21 @@
+<h3>以下の内容で作成する</h3>
+
+<%= form_with(model:@blog, url: blogs_path, local:true) do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+
+  <div>
+    タイトル:<%= @blog.title %>
+  </div>
+  <div>
+    本文:<%= @blog.content %>
+  </div>
+  <%= form.submit "登録する" %>
+
+<% end %>
+
+<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.submit '戻る', name: 'back' %>
+<% end %>
