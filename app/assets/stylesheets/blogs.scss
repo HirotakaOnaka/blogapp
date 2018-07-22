@@ -1,0 +1,27 @@
+li{
+    list-style: none;
+    text-align: left;
+}
+
+.new_post{
+    width: 100%;
+}
+.blog_form,.blog_confirm{
+    margin-left: auto;
+    margin-right: auto;
+}
+.blog_confirm{
+    margin-bottom: 30px;
+}
+.blog_input{
+    width: 100%;
+    color: #171d1d;
+    background-color: rgba(255,255,255,.5);
+    border: none;
+    margin-bottom: 10px;
+}
+.btn_center{
+    text-align: center;
+    margin-bottom: 10px;
+}
+

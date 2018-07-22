@@ -1,8 +1,8 @@
 <%= form_with(model:@blog, local:true, url: choose_new_or_edit ) do |form| %>
 
   <% if @blog.errors.any? %>
-  <div id = "error_explanations">
-    <h3><%= @blog.errors.count %>件エラーが発生しました</h3>
+  <div class="alert alert-danger" role="alert">
+    <h4><%= @blog.errors.count %>件エラーが発生しました</h4>
     <ul>
       <% @blog.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -11,15 +11,30 @@
   </div>
   <% end %>
   
-  <div class="blog_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="new_post">
+    <table class="blog_form">
+      <tr>
+        <td>
+          <h5><%= form.label :title %></h5>
+          <%= form.text_field :title, class:'blog_input' %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5><%= form.label :content %></h5>
+          <%= form.text_area :content, class:'blog_input',:size => "60x5" %>
+        </td>
+      </tr>
+      <tr>
+          <td>
+　　        <div class="btn_center">
+            <%= form.submit 'N E X T', class:'btn btn-default' %>
+            </p>
+          </td>
+      </tr>
+    </table>
   </div>
-  
-  <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
 
 <% end %>
+
+<h5 class="text-center"><%= link_to "Go to ARCHIVES", blogs_path %></h4>
