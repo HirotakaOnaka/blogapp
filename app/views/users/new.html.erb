@@ -1,0 +1,53 @@
+<section class="section">
+  <div class="container">
+    <h2 class="text-center title">CREATE YOUR ACCOUNT</h2>
+
+    <%= form_with(model:@user, local: true) do |f| %>
+    <% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="new_post">
+    <table class="blog_form">
+      <tr>
+        <td>
+          <h5><%= f.label :name %></h5>
+          <%= f.text_field :name, class:'blog_input',:size => "45" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5><%= f.label :email %></h5>
+          <%= f.email_field :email, class:'blog_input',:size => "45" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5><%= f.label :password %></h5>
+          <%= f.password_field :password, class:'blog_input',:size => "45" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5><%= f.label :password_confirmation %></h5>
+          <%= f.password_field :password_confirmation, class:'blog_input',:size => "45" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class ="btn_center">
+            <%= f.submit 'CREATE ACCOUNT', class:'btn btn-default' %>
+          </div>
+        </td>
+      </tr>
+    </div>
+    </table>
+    <% end %>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 html {
-	background:#505D6E url(../images/back01.jpg) no-repeat center center fixed; 
+	background:#505D6E url(../../images/back01.jpg) no-repeat center center fixed; 
 	min-height:100%;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
@@ -34,7 +34,7 @@ body {
 	float:left;
 	display:block;
 	padding: 9px 10px;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(0, 0, 0, 0.4);
 	background-image: none;
 	border: 0 none;
 	top:0px; 
@@ -66,7 +66,7 @@ body {
 	left: 0px;
 	font-size: 13px;
 	padding:0;
-	background:none;
+	background: rgba(0, 0, 0, 0.4);
 	border:0 none;
 	border-radius: 2px;
 	-webkit-box-shadow: none;

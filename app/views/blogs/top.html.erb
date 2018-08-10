@@ -12,9 +12,18 @@
 	    <br>記録しておきたいメモやアイディアや学習記録
   	  </h3>
 
-　　　<p>
-        <%= link_to 'NEW POST', new_blog_path, class:"btn btn-default btn-lg" %>
-      </p>
+　　　<div>
+      <% if logged_in? %>
+        <%= link_to 'NEW POST', new_blog_path, class:'btn btn-default btn-lg' %>
+      <% else %>
+        <p>
+          <%= link_to 'LOG IN', new_session_path, class:'btn btn-default btn-lg'  %>
+  		</p>
+  		<p>
+  		  <%= link_to 'Create Your Account', new_user_path %>
+  		</p>
+      <% end %>
+      </div>
 
     </div>
     </div>

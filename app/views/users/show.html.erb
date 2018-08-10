@@ -1,0 +1,23 @@
+<section class="section">
+<div class="container">
+
+    <div class="row">
+	<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+
+      <p class="title">WELCOME TO MY NOTES!!</p>
+
+  	  <h3 class="tagline">
+	    ようこそ<%= @user.name %>さん
+	    <br>まずは投稿してみましょう。
+  	  </h3>
+
+　　　<div>
+        <%= link_to 'NEW POST', new_blog_path, class:'btn btn-default btn-lg' %>
+      </div>
+
+    </div>
+    </div>
+
+
+</div>
+</section>
