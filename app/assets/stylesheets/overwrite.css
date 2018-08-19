@@ -42,6 +42,9 @@ h5{
 .mainmenu{
 	color: #ff0000;
 }
+.btn-lg{
+    margin-bottom: 50px;
+}
 
 @media (min-width: 768px) {
 	.mainmenu { position: relative; }
