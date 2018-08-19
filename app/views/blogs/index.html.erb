@@ -2,25 +2,29 @@
 <div class="container">
 
   <h2 class="text-center title">ARCHIVES</h2>
-  
+
   <div class="row">
     <% @blogs.reverse_each do |blog| %>
-	  <div class="col-sm-6 col-md-4">
-	  <div class="thumbnail">
-	  <div class="caption">
-	    <h3><%= blog.title %></h3>
-		<p><%= blog.content.truncate(20) %></p>
-		<p>
-		  <%= link_to 'DETAIL', blog_path(blog.id), class: 'btn btn-default' %>
+      <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+      <div class="caption">
+
+        <h3><%= blog.title %></h3>
+        <p><%= blog.content.truncate(20) %></p>
+
+        <p>
+          <%= link_to 'DETAIL', blog_path(blog.id), class: 'btn btn-default' %>
+
           <% if blog.user_id == current_user.id %>
-            <%= link_to 'EDIT', edit_blog_path(blog.id),class:'btn btn-default' %>
-            <%= link_to 'DELETE', blog_path(blog.id), method: :delete, data:{confirm: '削除しますか？'},class:'btn btn-primary'%>
+              <%= link_to 'EDIT', edit_blog_path(blog.id),class:'btn btn-default' %>
+              <%= link_to 'DELETE', blog_path(blog.id), method: :delete, data:{confirm: '削除しますか？'},class:'btn btn-primary'%>
           <% end %>
-		</p>
-		<p>posted by : <%= blog.user.name %></p>
+        </p>
+        <p>posted by : <%= blog.user.name %></p>
+
       </div>
       </div>
-	  </div>
+      </div>
     <% end %>
   </div>
 

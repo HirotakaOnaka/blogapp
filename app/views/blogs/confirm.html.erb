@@ -1,46 +1,47 @@
 <section class="section">
 <div class="container">
-  
-　<h2 class="text-center title">CONFIRM</h2>
 
+  <h2 class="text-center title">CONFIRM</h2>
 
   <div class="new_post">
 
-  <%= form_with(model:@blog, url: blogs_path, local: true) do |form| %>
-　<%= form.hidden_field :title %><%= form.hidden_field :content %>
-　<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <table class="blog_confirm">
-      <tr>
-        <td>
-          <h5><%= form.label :title %></h5>
-          <%= @blog.title %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h5><%= form.label :content %></h5>
-          <%= text_url_to_link(h(simple_format(@blog.content))).html_safe %>
-        </td>
-      </tr>
-    </table>
-  </div>
-  </div>
-  
-  <div class="btn_center">
-    <%= form.submit 'P O S T', class:'btn btn-default' %>
-  </div>
-  <% end %>
-  
-  <div class="btn_center">
-    <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
-        <%= form.hidden_field :title %><%= form.hidden_field :content %>
-        <%= form.submit 'B A C K', name: 'back', class:'btn btn-primary'  %>
+    <%= form_with(model:@blog, url: blogs_path, local: true) do |form| %>
+    <%= form.hidden_field :title %><%= form.hidden_field :content %>
+
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+      <table class="blog_confirm">
+        <tr>
+          <td>
+            <h5><%= form.label :title %></h5>
+            <%= @blog.title %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <h5><%= form.label :content %></h5>
+            <%= text_url_to_link(h(simple_format(@blog.content))).html_safe %>
+          </td>
+        </tr>
+      </table>
+      </div>
+    </div>
+
+    <div class="btn_center">
+      <%= form.submit 'P O S T', class:'btn btn-default' %>
+    </div>
+
     <% end %>
-  </div>
-  
+
+    <div class="btn_center">
+      <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+          <%= form.hidden_field :title %><%= form.hidden_field :content %>
+          <%= form.submit 'B A C K', name: 'back', class:'btn btn-primary'  %>
+      <% end %>
+    </div>
+
   </div>
 
-  
 </section>
 </div>
