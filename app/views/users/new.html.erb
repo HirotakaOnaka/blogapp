@@ -17,26 +17,26 @@
     <table class="blog_form">
       <tr>
         <td>
-          <h5><%= f.label :name %></h5>
-          <%= f.text_field :name, class:'blog_input',:size => "45" %>
+          <h5>USERNAME</h5>
+          <%= f.text_field :name, class:'blog_input',:size => "45",:placeholder => " Enter your Nickname" %>
         </td>
       </tr>
       <tr>
         <td>
-          <h5><%= f.label :email %></h5>
-          <%= f.email_field :email, class:'blog_input',:size => "45" %>
+          <h5>Email</h5>
+          <%= f.email_field :email, class:'blog_input',:size => "45",:placeholder => " Enter your Email" %>
         </td>
       </tr>
       <tr>
         <td>
-          <h5><%= f.label :password %></h5>
-          <%= f.password_field :password, class:'blog_input',:size => "45" %>
+          <h5>Password</h5>
+          <%= f.password_field :password, class:'blog_input',:size => "45",:placeholder => " Enter 8 or more characters" %>
         </td>
       </tr>
       <tr>
         <td>
-          <h5><%= f.label :password_confirmation %></h5>
-          <%= f.password_field :password_confirmation, class:'blog_input',:size => "45" %>
+          <h5>Password(Confirmation)</h5>
+          <%= f.password_field :password_confirmation, class:'blog_input',:size => "45",:placeholder => " Enter Password again" %>
         </td>
       </tr>
       <tr>

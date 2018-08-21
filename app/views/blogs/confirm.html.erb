@@ -13,14 +13,14 @@
       <table class="blog_confirm">
         <tr>
           <td>
-            <h5><%= form.label :title %></h5>
+            <h5>TITLE</h5>
             <%= @blog.title %>
           </td>
         </tr>
 
         <tr>
           <td>
-            <h5><%= form.label :content %></h5>
+            <h5>CONTENT</h5>
             <%= text_url_to_link(h(simple_format(@blog.content))).html_safe %>
           </td>
         </tr>

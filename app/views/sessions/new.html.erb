@@ -1,19 +1,19 @@
 <section class="section">
   <div class="container">
     <h2 class="text-center title">LOG_IN</h2>
-    
+
     <%= form_with(scope: :session,url: sessions_path, local: true) do |f| %>
     <div class ="new_post">
     <table class="blog_form">
       <tr>
         <td>
-          <h5><%= f.label :email %></h5>
+          <h5>Email</h5>
           <%= f.email_field :email, class:'blog_input',:size => "45" %>
         </td>
       </tr>
       <tr>
         <td>
-          <h5><%= f.label :password %></h5>
+          <h5>Password</h5>
           <%= f.password_field :password, class:'blog_input',:size => "45" %>
         </td>
       </tr>
