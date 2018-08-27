@@ -1,7 +1,7 @@
 10.times do |n|
   title = Faker::Music.band
   content = Faker::RockBand.name
-  user_id = "142"
+  user_id = "3"
   image = Faker::Avatar.image
   Blog.create!(title: title,
                content: content,
