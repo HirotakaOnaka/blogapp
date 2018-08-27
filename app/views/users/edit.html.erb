@@ -42,7 +42,7 @@
       <tr>
         <td>
           <h5>Your Icon</h5>
-          <%= image_tag(@user.image.url) if @user.image.url, class:'profile_image' %>
+          <%= image_tag(@user.image.url, class:'profile_image_edit') if @user.image.url %>
           <%= f.file_field :image, id: :user_image %>
         </td>
       </tr>
