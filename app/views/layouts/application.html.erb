@@ -14,7 +14,7 @@
 <body>
 
   <header>
-    <img src="../../images/mynotes.png">
+    <%= link_to image_tag("/images/mynotes.png"), root_path %>
   </header>
 
   <nav class="mainmenu">
@@ -28,9 +28,9 @@
 
         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
         <% if logged_in? %>
-          <li><%= link_to 'HOME', user_path(current_user.id) %></li>
-          <li><%= link_to 'ARCHIVES', blogs_path %></li>
+          <li><%= link_to 'YOUR PAGE', user_path(current_user.id) %></li>
           <li><%= link_to 'NEW POST', new_blog_path %></li>
+          <li><%= link_to 'ARCHIVES', blogs_path %></li>
           <li><%= link_to 'LOG OUT', session_path(current_user.id), method: :delete %></li>
         <% else %>
           <li><%= link_to 'TOP', root_path %></li>

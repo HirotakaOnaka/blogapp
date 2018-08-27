@@ -27,6 +27,13 @@
       </tr>
       <tr>
         <td>
+          <h5>Image</h5>
+          <%= image_tag(@blog.image.url) if @blog.image.url %>
+          <%= form.file_field :image, id: :blog_image %>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <div class="btn_center">
             <%= form.submit 'N E X T', class:'btn btn-default' %>
           </div>

@@ -4,7 +4,11 @@
     <div class="row">
     <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
 
-      <p class="title">MY NOTES</p>
+      <p class="title">
+        <% if logged_in? %>
+        WELCOME to
+        <% end %>
+        MY NOTES</p>
       <p class="subtitle">Learning programming</p>
 
       <h3 class="tagline">

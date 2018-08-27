@@ -6,22 +6,26 @@
   <div class="new_post">
 
     <%= form_with(model:@blog, url: blogs_path, local: true) do |form| %>
-    <%= form.hidden_field :title %><%= form.hidden_field :content %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :image_cache %>
 
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
       <table class="blog_confirm">
         <tr>
           <td>
-            <h5>TITLE</h5>
-            <%= @blog.title %>
+            <h3><%= @blog.title %></h5>
           </td>
         </tr>
-
         <tr>
           <td>
-            <h5>CONTENT</h5>
-            <%= text_url_to_link(h(simple_format(@blog.content))).html_safe %>
+            <p><%= text_url_to_link(h(simple_format(@blog.content))).html_safe %></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= image_tag @blog.image %>
           </td>
         </tr>
       </table>
@@ -36,7 +40,10 @@
 
     <div class="btn_center">
       <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
-          <%= form.hidden_field :title %><%= form.hidden_field :content %>
+          <%= form.hidden_field :title %>
+          <%= form.hidden_field :content %>
+          <%= form.hidden_field :image_cache %>
+
           <%= form.submit 'B A C K', name: 'back', class:'btn btn-primary'  %>
       <% end %>
     </div>

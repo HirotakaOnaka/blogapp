@@ -3,7 +3,7 @@
 
   <h2 class="text-center title">ARCHIVES</h2>
 
-  <div class="row">
+  <div class="row row-eq-height">
     <% @blogs.reverse_each do |blog| %>
       <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
@@ -11,7 +11,9 @@
 
         <h3><%= blog.title %></h3>
         <p><%= blog.content.truncate(20) %></p>
-
+        <% if blog.image.present?%>
+          <p><%= image_tag blog.image %>
+        <% end %>
         <p>
           <%= link_to 'DETAIL', blog_path(blog.id), class: 'btn btn-default' %>
 

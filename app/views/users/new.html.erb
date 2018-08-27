@@ -41,6 +41,13 @@
       </tr>
       <tr>
         <td>
+          <h5>Your Icon</h5>
+          <%= image_tag(@user.image.url) if @user.image.url %>
+          <%= f.file_field :image, id: :user_image %>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <div class ="btn_center">
             <%= f.submit 'CREATE ACCOUNT', class:'btn btn-default' %>
           </div>

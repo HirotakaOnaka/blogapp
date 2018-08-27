@@ -1,0 +1,60 @@
+<section class="section">
+  <div class="container">
+    <h2 class="text-center title">CREATE YOUR ACCOUNT</h2>
+
+    <%= form_with(model:@user, local: true) do |f| %>
+    <% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="new_post">
+    <table class="blog_form">
+      <tr>
+        <td>
+          <h5>USERNAME</h5>
+          <%= f.text_field :name, class:'blog_input',:size => "45",:placeholder => " Enter your Nickname" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5>Email</h5>
+          <%= f.email_field :email, class:'blog_input',:size => "45",:placeholder => " Enter your Email" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5>Password</h5>
+          <%= f.password_field :password, class:'blog_input',:size => "45",:placeholder => " Enter 8 or more characters" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5>Password(Confirmation)</h5>
+          <%= f.password_field :password_confirmation, class:'blog_input',:size => "45",:placeholder => " Enter Password again" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5>Your Icon</h5>
+          <%= image_tag(@user.image.url) if @user.image.url %>
+          <%= f.file_field :image, id: :user_image %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class ="btn_center">
+            <%= f.submit 'EDIT PROFILE', class:'btn btn-default' %>
+          </div>
+        </td>
+      </tr>
+    </div>
+    </table>
+    <% end %>
+  </div>
+</section>

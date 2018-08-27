@@ -8,14 +8,17 @@
     <table class="blog_confirm">
       <tr>
         <td>
-          <h5>Title</h5>
-          <%= @blog.title %>
+          <h3><%= @blog.title %></h3>
         </td>
       </tr>
       <tr>
         <td>
-          <h5>Content</h5>
-          <%= text_url_to_link(h(simple_format(@blog.content))).html_safe %>
+          <p><%= text_url_to_link(h(simple_format(@blog.content))).html_safe %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= image_tag @blog.image %>
         </td>
       </tr>
     </table>
